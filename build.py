@@ -544,6 +544,8 @@ def dali_cmake_args():
 def tflite_cmake_args():
     return [
         "-DJOBS={}".format(multiprocessing.cpu_count()),
+        "-DARMNN_TAG=v21.02",
+        "-DACL_TAG=v21.02",
     ]
 
 
@@ -628,6 +630,8 @@ RUN apt-get update && \
             unzip \
             scons \
             libnuma-dev \
+            gcc-7 \
+            g++-7 \
             wget \
             zlib1g-dev \
             libarchive-dev \
